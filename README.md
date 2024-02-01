@@ -1,2 +1,2 @@
-# S-TODO
-A TODO software.
+# Easy Loaf
+A RPG word game based on AIGC.
