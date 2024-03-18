@@ -4,5 +4,6 @@ pub mod prelude;
 
 pub mod click;
 pub mod level;
+pub mod scene;
 pub mod systeminfo;
 pub mod user;

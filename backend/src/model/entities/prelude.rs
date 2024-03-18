@@ -2,5 +2,6 @@
 
 pub use super::click::Entity as Click;
 pub use super::level::Entity as Level;
+pub use super::scene::Entity as Scene;
 pub use super::systeminfo::Entity as Systeminfo;
 pub use super::user::Entity as User;
