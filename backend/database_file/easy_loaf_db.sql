@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `click`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `click` (
-  `click_id` int NOT NULL AUTO_INCREMENT,
-  `date` char(20) DEFAULT NULL,
-  `level_id` int DEFAULT NULL,
-  `count_today` int DEFAULT NULL,
-  `fake_count` int DEFAULT NULL,
-  PRIMARY KEY (`click_id`)
+  `Click_id` int NOT NULL AUTO_INCREMENT,
+  `Date` text,
+  `Level_id` int DEFAULT NULL,
+  `Attempt_times` int DEFAULT NULL,
+  `Pass_times` int DEFAULT NULL,
+  PRIMARY KEY (`Click_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,8 +50,14 @@ DROP TABLE IF EXISTS `level`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `level` (
   `level_id` int NOT NULL AUTO_INCREMENT,
-  `object` char(20) DEFAULT NULL,
-  `description` text,
+  `Description` text,
+  `Attempt_times` int DEFAULT NULL,
+  `Pass_times` int DEFAULT NULL,
+  `Indicator` int DEFAULT NULL,
+  `Initial_indicator` int DEFAULT NULL,
+  `Threshold` int DEFAULT NULL,
+  `Content_pr` text,
+  `Quantity_pr` text,
   PRIMARY KEY (`level_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -66,6 +72,31 @@ LOCK TABLES `level` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `scene`
+--
+
+DROP TABLE IF EXISTS `scene`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `scene` (
+  `Scene_id` int NOT NULL AUTO_INCREMENT,
+  `Scene_title` text,
+  `Scene_desc` text,
+  `Level_id` int DEFAULT NULL,
+  PRIMARY KEY (`Scene_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scene`
+--
+
+LOCK TABLES `scene` WRITE;
+/*!40000 ALTER TABLE `scene` DISABLE KEYS */;
+/*!40000 ALTER TABLE `scene` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `systeminfo`
 --
 
@@ -73,7 +104,7 @@ DROP TABLE IF EXISTS `systeminfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `systeminfo` (
-  `level_id` int DEFAULT NULL,
+  `Level_id` int DEFAULT NULL,
   `info_type` char(30) DEFAULT NULL,
   `my_int` int DEFAULT NULL,
   `my_str` text,
@@ -98,11 +129,10 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `user_id` int NOT NULL AUTO_INCREMENT,
-  `user_name` char(20) DEFAULT NULL,
-  `user_level` int DEFAULT NULL,
-  `current_msg` text,
-  PRIMARY KEY (`user_id`)
+  `User_Id` int NOT NULL,
+  `User_name` text,
+  `Current_msg` text,
+  PRIMARY KEY (`User_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -124,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-16 19:20:18
+-- Dump completed on 2024-03-18 18:40:49

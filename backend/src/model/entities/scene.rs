@@ -3,15 +3,16 @@
 use sea_orm::entity::prelude::*;
 
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
-#[sea_orm(table_name = "systeminfo")]
+#[sea_orm(table_name = "scene")]
 pub struct Model {
+    #[sea_orm(column_name = "Scene_id", primary_key)]
+    pub scene_id: i32,
+    #[sea_orm(column_name = "Scene_title", column_type = "Text", nullable)]
+    pub scene_title: Option<String>,
+    #[sea_orm(column_name = "Scene_desc", column_type = "Text", nullable)]
+    pub scene_desc: Option<String>,
     #[sea_orm(column_name = "Level_id")]
     pub level_id: Option<i32>,
-    pub info_type: Option<String>,
-    pub my_int: Option<i32>,
-    #[sea_orm(column_type = "Text", nullable)]
-    pub my_str: Option<String>,
-    pub my_bigint: Option<i64>,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

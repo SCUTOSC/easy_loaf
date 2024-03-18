@@ -1,10 +1,7 @@
 mod controller;
 mod dao;
-mod entities;
 mod model;
-mod service;
 mod utils;
-
 use std::env;
 
 use actix_cors::Cors;
