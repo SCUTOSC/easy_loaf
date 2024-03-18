@@ -5,12 +5,16 @@ use sea_orm::entity::prelude::*;
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
 #[sea_orm(table_name = "click")]
 pub struct Model {
-    #[sea_orm(primary_key)]
+    #[sea_orm(column_name = "Click_id", primary_key)]
     pub click_id: i32,
+    #[sea_orm(column_name = "Date", column_type = "Text", nullable)]
     pub date: Option<String>,
+    #[sea_orm(column_name = "Level_id")]
     pub level_id: Option<i32>,
-    pub count_today: Option<i32>,
-    pub fake_count: Option<i32>,
+    #[sea_orm(column_name = "Attempt_times")]
+    pub attempt_times: Option<i32>,
+    #[sea_orm(column_name = "Pass_times")]
+    pub pass_times: Option<i32>,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
