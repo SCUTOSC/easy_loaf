@@ -42,6 +42,28 @@ LOCK TABLES `click` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `connect`
+--
+
+DROP TABLE IF EXISTS `connect`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `connect` (
+  `Scene_id` int DEFAULT NULL,
+  `Level_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `connect`
+--
+
+LOCK TABLES `connect` WRITE;
+/*!40000 ALTER TABLE `connect` DISABLE KEYS */;
+/*!40000 ALTER TABLE `connect` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `level`
 --
 
@@ -154,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-18 18:40:49
+-- Dump completed on 2024-03-22 18:35:42
